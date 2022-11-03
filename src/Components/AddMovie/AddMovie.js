@@ -10,7 +10,6 @@ export default function AddMovie({adding}) {
     let descRef = useRef();
     let [rate, setRate] = useState(0);
     const ratingChanged = (newRating) => {
-        console.log(newRating);
         setRate(newRating);
     };
 
@@ -55,7 +54,7 @@ export default function AddMovie({adding}) {
                 <h6> Rating :  </h6>
                 <ReactStars count={10}
                             onChange={ratingChanged}
-                            size={50}
+                            size={30}
                             isHalf={true}
                             activeColor="#ffd700"/>
                 </div>
