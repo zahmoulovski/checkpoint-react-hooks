@@ -15,9 +15,9 @@ export default function Filtring({filter}) {
         ev.preventDefault();
         filter(searchRef.current.value,rate);
     }
+
     return (
             <div>
-            
                 <form className="searchform" onChange={submitted}>
                     <img src="https://static.wikia.nocookie.net/logopedia/images/d/d5/Flix_logo.png" alt="logo" style={{height:'65px'}}/>
                     <input ref={searchRef} className="form-control form-control-lg searchinp" type="text" placeholder="Search for film..." />
@@ -28,14 +28,5 @@ export default function Filtring({filter}) {
                             isHalf={true}
                             activeColor="#ffd700"/>
                 </form> 
-  
             </div>
         );}
-
-
-
-
-
-
-
-

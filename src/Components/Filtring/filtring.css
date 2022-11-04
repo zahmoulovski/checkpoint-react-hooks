@@ -11,12 +11,8 @@
   width: 100%;
 }
 .searchinp {
-  width: 400px;
+  width: 350px;
   padding: 0px;
   margin: 0px;
-  height: 40px;
-}
-
-.searchbtn {
   height: 40px;
 }

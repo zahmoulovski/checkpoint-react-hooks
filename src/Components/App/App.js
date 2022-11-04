@@ -8,7 +8,7 @@ import { info } from '../Data/Data.js';
 function App(){
   
   const [list,setList] = useState(info);
-  const [filtredList, setFiltredList] = useState(list);
+  const [filterVideos, setfilterVideos] = useState(list);
   const [rate,setRate] = useState(0);
   const [keyword, setKeyword] = useState("");
 
@@ -18,21 +18,20 @@ function App(){
     }
   }
 
-
   function filter(key, rate){
     setKeyword(key);
     setRate(rate);
-    console.log(rate+"  "+key);
-    setFiltredList(list.filter( (element)=>{ return ( (element.title.toLowerCase().includes(key.toLowerCase())) && (element.rating >= rate) ) } ));
+    setfilterVideos(list.filter( (element)=>{ return ( (element.title.toLowerCase().includes(key.toLowerCase())) && (element.rating >= rate) ) } ));
   }
 
   useEffect(()=>{ filter(keyword,rate); },[list]);
 
+  
 
   return(
     <div className="App">
         <Filtring filter={filter}/>
-        <MovieList list={filtredList} />
+        <MovieList list={filterVideos} />
         <AddMovie adding={adding} />
     </div>
       );
