@@ -26,7 +26,7 @@ function App(){
 
   useEffect(()=>{ filter(keyword,rate); },[list]);
 
-  
+
 
   return(
     <div className="App">
