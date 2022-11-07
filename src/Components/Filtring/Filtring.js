@@ -25,7 +25,7 @@ export default function Filtring({filter}) {
                     <Genre/>
                     <ReactStars count={10}
                             onChange={ratingChanged}
-                            size={20}
+                            size={30}
                             isHalf={true}
                             activeColor="#ffd700"/>
                 </form> 

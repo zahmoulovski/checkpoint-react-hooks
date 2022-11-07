@@ -41,14 +41,14 @@ export default function Genre() {
         </Button>
       </div>
 
-      <div id="car-list">
+      {/* <div id="car-list">
         {filteredList.map((item, index) => (
           <div className="car-item" key={index}>
             <div className="car-name">{`Title: ${item.title}`}</div>
             <div className="car-year">{`Genre: ${item.genre}`}</div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

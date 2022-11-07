@@ -11,6 +11,7 @@ function App(){
   const [filterVideos, setfilterVideos] = useState(list);
   const [rate,setRate] = useState(0);
   const [keyword, setKeyword] = useState("");
+  const [genre,setGenre] = useState("");
 
   function adding(movie){
     if( movie.title && movie.img && movie.description && movie.posterURL ) {
@@ -18,13 +19,16 @@ function App(){
     }
   }
 
-  function filter(key, rate){
+  function filter(key, rate,genre){
     setKeyword(key);
     setRate(rate);
-    setfilterVideos(list.filter( (element)=>{ return ( (element.title.toLowerCase().includes(key.toLowerCase())) && (element.rating >= rate) ) } ));
+    setGenre(genre);
+    setfilterVideos(list.filter( (element)=>{ return ( (element.title.toLowerCase().includes(key.toLowerCase())) && (element.rating >= rate)  ) } ));
+    
   }
 
-  useEffect(()=>{ filter(keyword,rate); },[list]);
+
+  useEffect(()=>{ filter(keyword,rate,genre); },[list]);
 
 
 
