@@ -1,46 +1,21 @@
 import React,{ useEffect, useState } from "react";
 import { info } from "../Data/Data";
-//import "./Genre.css";
 import { Button } from 'react-bootstrap';
 
 export default function Genre() {
-      // filter
-
-    // List of all cars satisfing all the filters
     const [filteredList, setFilteredList] = useState(info);
-    // Selected Brand name filter
-    const [selectedBrand, setSelectedBrand] = useState("");
-    // Selected Genre filter
     const [selectedGenre, setSelectedGenre] = useState();
-  
-    const filterByBrand = (filteredData) => {
-      // Avoid filter for empty string
-      if (!selectedBrand) {
-        return filteredData;
-      }
-  
-      const filteredGenre = filteredData.filter(
-        (car) => car.title.split(" ").indexOf(selectedBrand) !== -1
-      );
-      return filteredGenre;
-    };
     const filterByGenre = (filteredData) => {
-      // Avoid filter for null value
       if (!selectedGenre) {
         return filteredData;
       }
-  
       const filteredGenre = filteredData.filter(
         (car) => car.genre === selectedGenre
       );
       return filteredGenre;
     };
-  
-  
-    // Toggle seletedGenre state
     const handleGenreChange = (event) => {
       const inputGenre = String(event.target.id);
-  
       if (inputGenre === selectedGenre) {
         setSelectedGenre("");
       } else {
@@ -49,12 +24,11 @@ export default function Genre() {
     };
   
     useEffect(() => {
-      var filteredData = filterByBrand(info);
+      var filteredData = filterByGenre(info);
       filteredData = filterByGenre(filteredData);
       setFilteredList(filteredData);
     }, [selectedGenre]);
 
-  // filter
   return(
     <div className="Genre">
       <div>Filter by Genre</div>
