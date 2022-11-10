@@ -8,3 +8,8 @@ export const info = [
   {release_year: 2020,genre: "serie", title:'The Expanse', img:'/image/The Expanse.jpg', description:"In the 24th century, a disparate band of antiheroes unravel a vast conspiracy that threatens the Solar System's fragile state of cold war.", posterURL:"www.theexpanse.com", rating:8.5 },
   {release_year: 2020,genre: "serie", title:'The Walking Dead', img:'/image/The Walking Dead.jpg', description:"Police officer (Rick) wakes up from a coma in which he was in for several months as a result of being shot while on the job, to find that the world has been ravaged by the zombies and he is the only survivor. An army of the zombies, events escalate.", posterURL:"www.thewalkingdead.com", rating:8.2 },
 ];
+
+export const theme = [
+  {variant:"secondary", text:"Dark"},
+  {variant:"dark", text:"Light"},
+]
